@@ -4,8 +4,7 @@ import { ContactItem, Text } from './ContactList.styled';
 const ContactList = ({ contacts }) => {
   return (
     <>
-      <h1>Contacts</h1>
-      <ol>
+      <ul>
         {contacts.map(({ id, name, number }) => {
           return (
             <ContactItem key={id}>
@@ -14,7 +13,7 @@ const ContactList = ({ contacts }) => {
             </ContactItem>
           );
         })}
-      </ol>
+      </ul>
     </>
   );
 };

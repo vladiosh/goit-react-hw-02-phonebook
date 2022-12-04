@@ -17,11 +17,9 @@ class ContactForm extends Component {
     this.reset();
   };
 
-  handleNameChange = event => {
-    this.setState({ name: event.currentTarget.value });
-  };
-  handleNumberChange = event => {
-    this.setState({ number: event.currentTarget.value });
+  handleChange = event => {
+    const { name, value } = event.currentTarget;
+    this.setState({ [name]: value });
   };
 
   reset = () => {
@@ -44,7 +42,7 @@ class ContactForm extends Component {
               Name
               <Input
                 value={name}
-                onChange={this.handleNameChange}
+                onChange={this.handleChange}
                 id={this.nameInputId}
                 type="text"
                 name="name"
@@ -58,7 +56,7 @@ class ContactForm extends Component {
               Number
               <Input
                 value={number}
-                onChange={this.handleNumberChange}
+                onChange={this.handleChange}
                 type="tel"
                 name="number"
                 pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
