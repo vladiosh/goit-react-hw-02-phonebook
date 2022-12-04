@@ -9,13 +9,13 @@ import { Container } from './App.styled';
 class App extends Component {
   state = {
     contacts: [],
-    // name: '',
   };
 
-  addContact = ({ name }) => {
+  addContact = ({ name, number }) => {
     const newContact = {
       id: nanoid(),
       name,
+      number,
     };
     this.setState(prevState => ({
       contacts: [...prevState.contacts, newContact],

@@ -5,7 +5,7 @@ export const Head = styled.h1`
   margin-bottom: 10px;
 `;
 
-export const NameBlock = styled.div`
+export const FormBlock = styled.div`
   padding: 5px;
   border: 1px solid;
   width: 300px;
@@ -19,6 +19,6 @@ export const NameLabel = styled.label`
   font-weight: 500;
 `;
 
-export const NameInput = styled.input`
+export const Input = styled.input`
   width: 200px;
 `;

@@ -1,13 +1,12 @@
 import React from 'react';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { Head, NameLabel, NameInput, NameBlock } from './ContactForm.styled';
+import { Head, NameLabel, Input, FormBlock } from './ContactForm.styled';
 
 class ContactForm extends Component {
   state = {
-    // contacts: [],
-    id: nanoid(),
     name: '',
+    number: '',
   };
 
   handleSubmit = event => {
@@ -18,32 +17,34 @@ class ContactForm extends Component {
     this.reset();
   };
 
-  handleChange = event => {
-    const { name, value } = event.currentTarget;
-
-    this.setState({ [name]: value });
+  handleNameChange = event => {
+    this.setState({ name: event.currentTarget.value });
+  };
+  handleNumberChange = event => {
+    this.setState({ number: event.currentTarget.value });
   };
 
   reset = () => {
     this.setState({
       name: '',
+      number: '',
     });
   };
 
   nameInputId = nanoid();
 
   render() {
-    const { name } = this.state;
+    const { name, number } = this.state;
     return (
       <>
         <Head>Phonebook</Head>
         <form onSubmit={this.handleSubmit}>
-          <NameBlock>
+          <FormBlock>
             <NameLabel htmlFor={this.nameInputId}>
               Name
-              <NameInput
+              <Input
                 value={name}
-                onChange={this.handleChange}
+                onChange={this.handleNameChange}
                 id={this.nameInputId}
                 type="text"
                 name="name"
@@ -52,8 +53,21 @@ class ContactForm extends Component {
                 required
               />
             </NameLabel>
+
+            <NameLabel htmlFor={this.nameInputId}>
+              Number
+              <Input
+                value={number}
+                onChange={this.handleNumberChange}
+                type="tel"
+                name="number"
+                pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                required
+              />
+            </NameLabel>
             <button type="submit">Add contact</button>
-          </NameBlock>
+          </FormBlock>
         </form>
       </>
     );
