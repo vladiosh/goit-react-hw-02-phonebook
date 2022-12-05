@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { Head, NameLabel, Input, FormBlock } from './ContactForm.styled';
+import { NameLabel, Input, FormBlock } from './ContactForm.styled';
 
 class ContactForm extends Component {
   state = {
