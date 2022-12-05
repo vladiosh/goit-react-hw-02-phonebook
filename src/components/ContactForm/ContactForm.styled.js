@@ -15,5 +15,5 @@ export const NameLabel = styled.label`
 `;
 
 export const Input = styled.input`
-  width: 250px;
+  width: 200px;
 `;
