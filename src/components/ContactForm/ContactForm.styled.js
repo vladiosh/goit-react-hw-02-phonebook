@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-export const Head = styled.h1`
-  margin: 0;
-  margin-bottom: 10px;
-`;
-
 export const FormBlock = styled.div`
   padding: 5px;
   border: 1px solid;

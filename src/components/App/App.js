@@ -5,7 +5,7 @@ import ContactForm from '../ContactForm';
 import ContactList from '../ContactList';
 import Filter from '../Filter';
 
-import { Container } from './App.styled';
+import { Container, Head } from './App.styled';
 
 class App extends Component {
   state = {
@@ -38,8 +38,9 @@ class App extends Component {
     );
     return (
       <Container>
+        <Head>Phonebook</Head>
         <ContactForm onSubmit={this.addContact} />
-        <h1>Contacts</h1>
+        <Head>Contacts</Head>
         <Filter value={filter} onChange={this.changeFilter} />
         <ContactList contacts={visibleContacts} />
       </Container>

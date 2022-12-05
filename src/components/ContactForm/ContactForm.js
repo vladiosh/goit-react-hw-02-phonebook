@@ -35,7 +35,6 @@ class ContactForm extends Component {
     const { name, number } = this.state;
     return (
       <>
-        <Head>Phonebook</Head>
         <form onSubmit={this.handleSubmit}>
           <FormBlock>
             <NameLabel htmlFor={this.nameInputId}>
