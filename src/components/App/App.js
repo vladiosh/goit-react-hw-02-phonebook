@@ -19,6 +19,11 @@ class App extends Component {
       name,
       number,
     };
+
+    if (this.chekName(newContact.name)) {
+      alert(`${newContact.name} is already in contacts`);
+      return newContact.name;
+    }
     this.setState(prevState => ({
       contacts: [...prevState.contacts, newContact],
     }));
@@ -26,6 +31,10 @@ class App extends Component {
 
   changeFilter = event => {
     this.setState({ filter: event.currentTarget.value });
+  };
+
+  chekName = newName => {
+    return this.state.contacts.find(({ name }) => name === newName);
   };
 
   render() {
