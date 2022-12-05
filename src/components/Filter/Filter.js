@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { FilterLabel, Input } from './Filter.styled';
 
@@ -12,3 +12,8 @@ const Filter = ({ value, onChange }) => {
 };
 
 export default Filter;
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
